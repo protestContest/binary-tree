@@ -13,8 +13,8 @@ class Node {
     ~Node();
 
     T getValue();
-    Node* getLeftChild();
-    Node* getRightChild();
+    Node<T>* getLeftChild();
+    Node<T>* getRightChild();
     void setLeftChild(Node* n);
     void setRightChild(Node* n);
 };

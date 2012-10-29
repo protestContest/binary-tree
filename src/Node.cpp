@@ -19,12 +19,12 @@ T Node<T>::getValue() {
 }
 
 template <typename T>
-Node* Node<T>::getLeftChild() {
+Node<T>* Node<T>::getLeftChild() {
     return leftChild;
 }
 
 template <typename T>
-Node* Node<T>::getRightChild() {
+Node<T>* Node<T>::getRightChild() {
     return rightChild;
 }
 
