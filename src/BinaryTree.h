@@ -6,7 +6,7 @@ template <typename T>
 class BinaryTree {
   private:
     int size;
-    Node* root;
+    Node<T>* root;
 
   public:
     BinaryTree<T>();

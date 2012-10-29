@@ -16,11 +16,12 @@ BinaryTree<T>::~BinaryTree() {
 
 template <typename T>
 void BinaryTree<T>::insert(T v) {
-
+    assert(v == v);
 }
 
 template <typename T>
 bool BinaryTree<T>::find(T v) {
+    assert(v == v);
     return false;
 }
 
@@ -31,7 +32,7 @@ void BinaryTree<T>::print() {
 
 template <typename T>
 void BinaryTree<T>::remove(T v) {
-
+    assert(v == v);
 }
 
 template <typename T>
