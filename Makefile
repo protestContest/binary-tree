@@ -12,7 +12,7 @@ CFLAGS = -Wall -Wextra -ggdb
 
 
 tree_test: $(TEST)/tree_test.cpp $(GTEST_MAINA) $(BUILD) $(SRC)/BinaryTree.o $(SRC)/Node.o
-	$(CC) $(CFLAGS) $(GTEST_INCLUDES) $(GTEST_MAINA) $(SRC_INCLUDES) $(TREE) $(SRC)/Node.o $(TEST)/tree_test.cpp -o $(BUILD)/tree_test -pthread
+	$(CC) $(CFLAGS) $(GTEST_INCLUDES) $(GTEST_MAINA) $(SRC_INCLUDES) $(SRC)/BinaryTree.o $(SRC)/Node.o $(TEST)/tree_test.cpp -o $(BUILD)/tree_test -pthread
 
 
 $(SRC)/BinaryTree.o: $(SRC)/BinaryTree.h $(SRC)/BinaryTree.cpp 
