@@ -154,9 +154,8 @@ TEST(PRINT, Print) {
     it->insert(15);
     it->insert(17);
     it->insert(12);
-    it->insert(10);
-    it->insert(13);
-    it->insert(18);
+    it->insert(2);
+    it->insert(7);
     it->print();
     delete it;
 }
