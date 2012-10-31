@@ -6,7 +6,7 @@ using std::cout;
 using std::endl;
 using std::string;
 
-TEST(TreeTest, Constructor) {
+TEST(CONSTRUCTOR, Constructor) {
     BinaryTree<int>* it = new BinaryTree<int>();
     delete it;
 
@@ -17,12 +17,13 @@ TEST(TreeTest, Constructor) {
     delete st;
 }
 
-TEST(getSize, BasicGetSize) {
+TEST(GETSIZE, BasicGetSize) {
     BinaryTree<int>* it = new BinaryTree<int>();
     EXPECT_EQ(0, it->getSize());
+    delete it;
 }
 
-TEST(insert, BasicInsert) {
+TEST(INSERT, BasicInsert) {
     BinaryTree<int>* it = new BinaryTree<int>();
     it->insert(5);
     it->insert(12);
@@ -33,10 +34,34 @@ TEST(insert, BasicInsert) {
     dt->insert(3.54);
     dt->insert(0.00000192);
     dt->insert(100045.0000001);
-    delete it;
+    delete dt;
 }
 
-TEST(find, BasicFind) {
+TEST(INSERT, InsertGetSize) {
+    BinaryTree<int>* it = new BinaryTree<int>();
+    it->insert(12);
+    it->insert(18);
+    it->insert(-255);
+    EXPECT_EQ(3, it->getSize());
+    delete it;
+
+    BinaryTree<double>* dt = new BinaryTree<double>();
+    dt->insert(1.2);
+    dt->insert(18.002);
+    dt->insert(-255);
+    dt->insert(372.16);
+    EXPECT_EQ(3, dt->getSize());
+    delete dt;
+
+    BinaryTree<string>* st = new BinaryTree<string>();
+    st->insert("adolf");
+    st->insert("hipster");
+    EXPECT_EQ(2, st->getSize());
+    delete st;
+
+}
+
+TEST(FIND, BasicFind) {
     BinaryTree<int>* it = new BinaryTree<int>();
     EXPECT_FALSE(it->find(0));
     EXPECT_FALSE(it->find(100));
@@ -54,7 +79,7 @@ TEST(find, BasicFind) {
 
 }
 
-TEST(multiple, FindAndInsert) {
+TEST(FIND, FindAndInsert) {
     BinaryTree<int>* it = new BinaryTree<int>();
     EXPECT_FALSE(it->find(12));
     EXPECT_FALSE(it->find(10000));
@@ -95,7 +120,7 @@ TEST(multiple, FindAndInsert) {
     delete st;
 }
 
-TEST(remove, Remove) {
+TEST(REMOVE, Remove) {
     BinaryTree<int>* it = new BinaryTree<int>();
     EXPECT_FALSE(it->find(12));
     it->insert(12);
@@ -120,4 +145,18 @@ TEST(remove, Remove) {
     EXPECT_FALSE(st->find("test"));
     delete st;
 
+}
+
+TEST(PRINT, Print) {
+    BinaryTree<int>* it = new BinaryTree<int>();
+    it->insert(10);
+    it->insert(5);
+    it->insert(15);
+    it->insert(17);
+    it->insert(12);
+    it->insert(10);
+    it->insert(13);
+    it->insert(18);
+    it->print();
+    delete it;
 }
