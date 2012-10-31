@@ -7,6 +7,7 @@ class BinaryTree {
   private:
     int size;
     Node<T>* root;
+    void deleteSubtree(Node<T>* r);
 
   public:
     BinaryTree<T>();
