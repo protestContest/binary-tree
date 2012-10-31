@@ -6,6 +6,7 @@ template <typename T>
 class BinaryTree {
   private:
     int size;
+    int depth;
     Node<T>* root;
     void deleteSubtree(Node<T>* r);
 
