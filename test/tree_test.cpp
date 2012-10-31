@@ -50,7 +50,7 @@ TEST(INSERT, InsertGetSize) {
     dt->insert(18.002);
     dt->insert(-255);
     dt->insert(372.16);
-    EXPECT_EQ(3, dt->getSize());
+    EXPECT_EQ(4, dt->getSize());
     delete dt;
 
     BinaryTree<string>* st = new BinaryTree<string>();
